@@ -176,23 +176,13 @@ void splitDecrypted(vector<string> &decryptedArr, string encryptedMessage)
   }
 }
 
-void removeCharFromString(string &str, char charToRemove)
-{
-  str.erase(remove(str.begin(), str.end(), charToRemove), str.end());
-}
-
 void decrypt()
 {
 
   string encryptedMessage, key;
 
-  char dummyLetter;
-
   takeInputString(encryptedMessage, "Enter the encrypted text: ");
   takeInputString(key, "Enter the key text: ");
-
-  cout << "If any dummy letter enter, else enter 1: ";
-  cin >> dummyLetter;
 
   for (int i = 0; i < encryptedMessage.size(); i++)
   {
@@ -207,7 +197,6 @@ void decrypt()
 
   changeToUpper(key);
   changeToUpper(encryptedMessage);
-  dummyLetter = toupper(dummyLetter);
 
   char matrix[5][5];
 
@@ -243,15 +232,8 @@ void decrypt()
     finalAns += decryptedArrAns[i];
   }
 
-  if (dummyLetter == '1')
-  {
-    return;
-  }
-
-  removeCharFromString(finalAns, dummyLetter);
-
-  cout << "\n"
-       << "Decryped Value is : " << finalAns;
+  cout
+      << "Decryped Value is : " << finalAns;
 }
 
 void encrypt()
@@ -309,7 +291,7 @@ void encrypt()
 
   for (int i = 0; i < encryptedArr.size(); i++)
   {
-    cout << encryptedArr[i] << " ";
+    cout << encryptedArr[i] << " "; // Spaces
   }
 }
 
@@ -347,3 +329,55 @@ int main()
 
   return 0;
 }
+
+/*
+
+-------------------------------------------------
+
+Test Case 1:
+
+For Encryption enter 1
+For Decryption enter 2
+
+Enter Value: 1
+
+Enter a Message: hide the gold in the tree stump!!!
+
+Enter key value: playfair example
+
+Encryped Value:
+BM OD ZB XD NA BE KU DM UI XM MO UV IF
+
+-------------------------------------------------
+
+Test Case 2:
+
+For Encryption enter 1
+For Decryption enter 2
+
+Enter Value: 1
+
+Enter a Message: Hello World!!
+
+Enter key value: Security
+
+Encryped Value:
+FU OQ MP XN SP HQ
+
+-------------------------------------------------
+
+Test Case 3:
+
+For Encryption enter 1
+For Decryption enter 2
+
+Enter Value: 2
+
+Enter the encrypted text: FU OQ MP XN SP HQ
+
+Enter the key text: Security
+
+Decryped Value is : HELXLOWORLDX
+
+-------------------------------------------------
+*/
