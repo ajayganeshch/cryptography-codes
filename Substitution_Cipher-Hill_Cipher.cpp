@@ -212,7 +212,7 @@ int getDupValue()
 {
   char dupValueChar;
 
-  cout << "\nEnter the duplicate Character you use/to use (if nothing enter 1): ";
+  cout << "\nEnter the duplicate Character to use (if nothing enter 1): ";
   cin >> dupValueChar;
 
   if (isalpha(dupValueChar) != 0)
@@ -238,7 +238,7 @@ void decrypt()
 
   cin >> n;
 
-  int dupValue = getDupValue();
+  int dupValue = 90; // Z (z in upper case)
 
   if (n != 2 && n != 3)
   {
