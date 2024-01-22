@@ -26,7 +26,7 @@ void changeToUpper(string &str)
   }
 }
 
-void fillMatrix(string message, vector<vector<int>> &matrix, int n, int m, int dupValue)
+void fillMatrix(string message, vector<vector<int>> &matrix, int m, int n, int dupValue)
 {
   int t = 0;
 
@@ -50,6 +50,7 @@ void fillMatrix(string message, vector<vector<int>> &matrix, int n, int m, int d
 string matrixMultiplication(vector<vector<int>> matrix, vector<vector<int>> keyMatrix, int n)
 {
   vector<int> ans;
+
   for (int i = 0; i < n; i++)
   {
     int temp = 0;
@@ -74,7 +75,7 @@ string doCalculation(string message, vector<vector<int>> keyMatrix, int n, int d
 {
   vector<vector<int>> matrix(n, vector<int>(1));
 
-  fillMatrix(message, matrix, 1, n, dupValue);
+  fillMatrix(message, matrix, n, 1, dupValue);
 
   return matrixMultiplication(matrix, keyMatrix, n);
 }
@@ -125,6 +126,7 @@ vector<vector<int>> inverseOfMatrix3(vector<vector<int>> keyMatrix)
   det = (det + 26) % 26;
 
   det = multiplicativeInverse(det, 26);
+
   if (det == 0 || det == -1)
   {
     return vector<vector<int>>(n, vector<int>(n, 0));
@@ -212,7 +214,8 @@ int getDupValue()
 {
   char dupValueChar;
 
-  cout << "\nEnter the duplicate Character to use (if nothing enter 1): ";
+  cout << "\nEnter the duplicate Character to use/you used (if nothing enter 1,by default we use 'X'): ";
+
   cin >> dupValueChar;
 
   if (isalpha(dupValueChar) != 0)
@@ -223,7 +226,7 @@ int getDupValue()
   }
   else
   {
-    return 90;
+    return 88;
   }
 }
 
@@ -238,10 +241,11 @@ void decrypt()
 
   cin >> n;
 
-  int dupValue = 90; // Z (z in upper case)
+  int dupValue = getDupValue();
 
   if (n != 2 && n != 3)
   {
+    cout << "Only For n = 2 and 3, this code works :(";
     return;
   }
 
@@ -331,6 +335,8 @@ void encrypt()
 
 int main()
 {
+  cout << "\n\n------ Ch. Ganesh Sri Naga Venkata Ajay [21BDS0269] ------\n";
+
   int whatToDo;
 
   cout << "\nFor Encryption enter 1\nFor Decryption enter 2\n\nEnter Value: ";

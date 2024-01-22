@@ -238,6 +238,7 @@ void decrypt()
 
 void encrypt()
 {
+
   string message, key;
 
   // 1. Input
@@ -297,6 +298,8 @@ void encrypt()
 
 int main()
 {
+  cout << "\n\n------ Ch. Ganesh Sri Naga Venkata Ajay [21BDS0269] ------\n";
+
   int whatToDo;
 
   cout << "\nFor Encryption enter 1\nFor Decryption enter 2\n\nEnter Value: ";
