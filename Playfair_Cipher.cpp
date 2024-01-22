@@ -179,6 +179,8 @@ void splitDecrypted(vector<string> &decryptedArr, string encryptedMessage)
 void decrypt()
 {
 
+  cout << "\n";
+
   string encryptedMessage, key;
 
   takeInputString(encryptedMessage, "Enter the encrypted text: ");
@@ -239,6 +241,8 @@ void decrypt()
 void encrypt()
 {
 
+  cout << "\n";
+
   string message, key;
 
   // 1. Input
@@ -298,35 +302,48 @@ void encrypt()
 
 int main()
 {
-  cout << "\n\n------ Ch. Ganesh Sri Naga Venkata Ajay [21BDS0269] ------\n";
+  cout << "\nFor Encryption enter 1\nFor Decryption enter 2\nFor exit of program enter 0\n";
 
   int whatToDo;
 
-  cout << "\nFor Encryption enter 1\nFor Decryption enter 2\n\nEnter Value: ";
-
-  cin >> whatToDo;
-  cin.ignore();
-
-  cout << "\n";
   while (true)
   {
-    if (whatToDo == 1)
+    try
     {
+      cout << "\nEnter Value : ";
 
-      encrypt();
-      break;
-    }
-    else if (whatToDo == 2)
-    {
-      decrypt();
-      break;
-    }
-    else
-    {
-      cout << "Enter the correct number: ";
       cin >> whatToDo;
+      if (cin.fail() || (whatToDo != 1 && whatToDo != 2 && whatToDo != 0))
+      {
+
+        cin.clear();
+
+        cin.ignore(1000, '\n');
+
+        throw invalid_argument("\nInvalid input. Please enter 1 for Encryption or 2 for Decryption. For exit of program enter 0.");
+      }
+
       cin.ignore();
-      cout << "\n";
+
+      if (whatToDo == 0)
+      {
+        return 0;
+      }
+
+      if (whatToDo == 1)
+      {
+        encrypt();
+      }
+      else
+      {
+        decrypt();
+      }
+
+      break;
+    }
+    catch (const exception &e)
+    {
+      cout << e.what() << endl;
     }
   }
 
