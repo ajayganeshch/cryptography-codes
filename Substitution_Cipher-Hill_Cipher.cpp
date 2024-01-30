@@ -424,7 +424,7 @@ Enter the n value: 2
 
 Enter the duplicate Character you use/to use (if nothing enter 1): z
 
-Final Ans is: CEMTQIUL
+Final Ans is: CEMTQISB
 
 -------------------------------------------------
 
@@ -451,8 +451,9 @@ Test Case 4:
 
 For Encryption enter 1
 For Decryption enter 2
+For exit of program enter 0
 
-Enter Value: 1
+Enter Value : 1
 
 Enter the message: I LOVE CRYPTO
 
@@ -460,9 +461,9 @@ Enter the key: VIT
 
 Enter the n value: 2
 
-Enter the duplicate Character you use/to use (if nothing enter 1): 1
+Enter the duplicate Character to use/you used (if nothing enter 1,by default we use 'X'): 1
 
-Final Ans is: WLULWWDNZGAH
+Final Ans is: WPUVWSDRZUKP
 
 -------------------------------------------------
 
@@ -470,18 +471,19 @@ Test Case 5:
 
 For Encryption enter 1
 For Decryption enter 2
+For exit of program enter 0
 
-Enter Value: 2
+Enter Value : 2
 
-Enter the encrypted message: WLULWWDNZGAH
+Enter the encrypted message: WPUVWSDRZUKP
 
 Enter the key String: VIT
 
 Enter the n value (2/3): 2
 
-Enter the duplicate Character you use/to use (if nothing enter 1): 1
+Enter the duplicate Character to use/you used (if nothing enter 1,by default we use 'X'): 1
 
-Decryped Value is : ILOVECRYPTOZ
+Decryped Value is : ILOVECRYPTOX
 
 -------------------------------------------------
 
