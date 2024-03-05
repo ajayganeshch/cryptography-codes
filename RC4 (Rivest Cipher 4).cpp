@@ -101,8 +101,10 @@ void answer(string text)
   vector<int> s = key_scheduling(state_vector_len, keyLen, key);
   vector<int> cipher_text = pseudo_random_generator(state_vector_len, s, utLen, user_text);
 
+  text[0] = toupper(text[0]);
+
   cout << "\n"
-       << text << "text is: ";
+       << text << " text is: ";
 
   for (int i = 0; i < cipher_text.size(); i++)
   {
