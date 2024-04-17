@@ -1,12 +1,12 @@
 # Elliptic Curve Cryptography
 
-# --------------------------------------------------------------
+---
 
-# Test Case 1:
+## Test Case 1:
 
-# Input (Client-Side):
+### Input (Client-Side):
 
-'''
+```plaintext
 Enter a value: 1
 Server: Message Recived!
 Enter b value: 1
@@ -21,15 +21,14 @@ Enter point value to find inverse of that (x,y): 3,10
 Server: Message Recived!
 Enter k value: 2
 Server: Message Recived!
-Enter k\*p enter point p value(x,y): 3,10
+Enter k*p enter point p value(x,y): 3,10
 Server: Message Recived!
 Successfully disconnected
+```
 
-'''
+### Output (Server-Side):
 
-# Output (Server-Side):
-
-'''
+```plaintext
 Server is Starting....
 Server is listening on 0.0.0.0
 New connection ('127.0.0.1', 63138) connected
@@ -42,8 +41,5 @@ Addition Of Two Points [3, 10] and [9, 7] : (17, 20)
 
 The value of -[3, 10] is : (3, 13)
 
-The value of 2 \* [3, 10] : (7, 12)
-
-'''
-
-# --------------------------------------------------------------
+The value of 2 * [3, 10] : (7, 12)
+```
